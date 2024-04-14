@@ -1,0 +1,7 @@
+- 👋 Hi, I'm @GuyBernstein
+- 👀 I'm interested in software development, algorithms, and exploring new technologies.
+- 🌱 I'm currently learning advanced data structures, web development frameworks, and machine learning concepts.
+- 💞️ I'm looking to collaborate on open-source projects, particularly those related to education, productivity, or social impact.
+- 📫 How to reach me: Feel free to send me an email at guyu669@gmail.com or connect with me on LinkedIn.www.linkedin.com/in/guy-borenstien-3bb039304
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: When I'm not coding, you can find me playing the guitar or exploring the great outdoors.
