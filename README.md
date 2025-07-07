@@ -69,12 +69,3 @@ High-performance web crawler using DFS algorithm with distributed task processin
 
 ---
 *"Code is like humor. When you have to explain it, it's bad." – Cory House*
-
-### 📊 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=GuyBernstein&show_icons=true&theme=minimal&hide_border=true" alt="Guy's GitHub stats" />
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=GuyBernstein&color=blue&style=flat-square" alt="Profile views" />
-</p>
