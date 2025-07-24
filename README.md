@@ -70,5 +70,8 @@ High-performance web crawler using DFS algorithm with distributed task processin
 - **Performance Optimization** in distributed systems and database scaling
 - **API Gateway Patterns** and microservices orchestration
 
+ <!-- LANGUAGES BREAKDOWN (STATIC EXAMPLE) START -->
+
+ <!-- LANGUAGES BREAKDOWN (STATIC EXAMPLE) END -->
 ---
 *"Code is like humor. When you have to explain it, it's bad." – Cory House*
