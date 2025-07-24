@@ -51,7 +51,7 @@ jobs:
           # Run cloc to analyze lines of code, excluding non-source code files
           echo "Calculating lines of code..."
           mkdir -p ../output
-          cloc . --exclude-ext=json,html,css,svg,md,ps1,scss --json > ../output/cloc-output.json
+          cloc . --exclude-ext=json,svg,md,ps1,scss --json > ../output/cloc-output.json
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
       - name: Commit and Push Output
@@ -69,8 +69,10 @@ jobs:
           CSHARP_LINES=$(jq '."C#".code // 0' output/cloc-output.json)
           C_LINES=$(jq '.C.code // 0' output/cloc-output.json)
           CPP_LINES=$(jq '."C++".code // 0' output/cloc-output.json)
-          OTHER_LINES=$((TOTAL_LINES - JAVA_LINES - PYTHON_LINES - JS_LINES - CSHARP_LINES - C_LINES - CPP_LINES))
-
+          HTML_LINES=$(jq '."HTML".code // 0' output/cloc-output.json)
+          CSS_LINES=$(jq '."CSS".code // 0' output/cloc-output.json)
+          OTHER_LINES=$((TOTAL_LINES - JAVA_LINES - PYTHON_LINES - JS_LINES - CSHARP_LINES - C_LINES - CPP_LINES - HTML_LINES - CSS_LINES))
+          
           # Function to format numbers with commas (ensuring proper locale settings)
           format_number() {
             export LC_ALL="en_US.UTF-8"
@@ -85,12 +87,16 @@ jobs:
           FORMATTED_C=$(format_number $C_LINES)
           FORMATTED_CPP=$(format_number $CPP_LINES)
           FORMATTED_OTHER=$(format_number $OTHER_LINES)
+          FORMATTED_HTML=$(format_number $HTML_LINES)
+          FORMATTED_CSS=$(format_number $CSS_LINES)
 
           CODE_BLOCK="\`\`\`
           [ LANGUAGES BREAKDOWN ]
 
           Java         --> $FORMATTED_JAVA lines
           Python       --> $FORMATTED_PYTHON lines
+          HTML         --> $FORMATTED_HTML lines
+          CSS          --> $FORMATTED_CSS lines
           JavaScript   --> $FORMATTED_JS lines
           C#           --> $FORMATTED_CSHARP lines
           C            --> $FORMATTED_C lines
