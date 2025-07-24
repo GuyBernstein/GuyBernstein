@@ -1,0 +1,128 @@
+{"header" : {
+  "cloc_url"           : "github.com/AlDanial/cloc",
+  "cloc_version"       : "1.98",
+  "elapsed_seconds"    : 0.324964046478271,
+  "n_files"            : 480,
+  "n_lines"            : 38374,
+  "files_per_second"   : 1477.08648141817,
+  "lines_per_second"   : 118086.909662377},
+"Java" :{
+  "nFiles": 277,
+  "blank": 3236,
+  "comment": 3949,
+  "code": 13953},
+"C++" :{
+  "nFiles": 26,
+  "blank": 765,
+  "comment": 616,
+  "code": 3794},
+"diff" :{
+  "nFiles": 7,
+  "blank": 0,
+  "comment": 52,
+  "code": 1957},
+"C" :{
+  "nFiles": 9,
+  "blank": 477,
+  "comment": 509,
+  "code": 1507},
+"C/C++ Header" :{
+  "nFiles": 32,
+  "blank": 551,
+  "comment": 506,
+  "code": 1262},
+"Maven" :{
+  "nFiles": 9,
+  "blank": 108,
+  "comment": 27,
+  "code": 832},
+"JavaScript" :{
+  "nFiles": 2,
+  "blank": 108,
+  "comment": 201,
+  "code": 719},
+"C#" :{
+  "nFiles": 35,
+  "blank": 176,
+  "comment": 109,
+  "code": 692},
+"ActionScript" :{
+  "nFiles": 5,
+  "blank": 64,
+  "comment": 0,
+  "code": 366},
+"XML" :{
+  "nFiles": 22,
+  "blank": 0,
+  "comment": 0,
+  "code": 355},
+"YAML" :{
+  "nFiles": 12,
+  "blank": 44,
+  "comment": 15,
+  "code": 296},
+"Text" :{
+  "nFiles": 10,
+  "blank": 3,
+  "comment": 0,
+  "code": 180},
+"INI" :{
+  "nFiles": 2,
+  "blank": 33,
+  "comment": 0,
+  "code": 146},
+"FXML" :{
+  "nFiles": 4,
+  "blank": 14,
+  "comment": 0,
+  "code": 128},
+"Dockerfile" :{
+  "nFiles": 9,
+  "blank": 33,
+  "comment": 33,
+  "code": 86},
+"Properties" :{
+  "nFiles": 8,
+  "blank": 26,
+  "comment": 22,
+  "code": 81},
+"make" :{
+  "nFiles": 3,
+  "blank": 40,
+  "comment": 21,
+  "code": 73},
+"CMake" :{
+  "nFiles": 2,
+  "blank": 8,
+  "comment": 4,
+  "code": 57},
+"Mako" :{
+  "nFiles": 2,
+  "blank": 16,
+  "comment": 0,
+  "code": 40},
+"TOML" :{
+  "nFiles": 1,
+  "blank": 4,
+  "comment": 2,
+  "code": 26},
+"Bourne Shell" :{
+  "nFiles": 1,
+  "blank": 6,
+  "comment": 5,
+  "code": 15},
+"Visual Studio Solution" :{
+  "nFiles": 1,
+  "blank": 1,
+  "comment": 0,
+  "code": 15},
+"MSBuild script" :{
+  "nFiles": 1,
+  "blank": 2,
+  "comment": 0,
+  "code": 8},
+"SUM": {
+  "blank": 5715,
+  "comment": 6071,
+  "code": 26588,
+  "nFiles": 480} }

@@ -71,7 +71,19 @@ High-performance web crawler using DFS algorithm with distributed task processin
 - **API Gateway Patterns** and microservices orchestration
 
  <!-- LANGUAGES BREAKDOWN START -->
+```
+[ LANGUAGES BREAKDOWN ]
 
+JavaScript   --> 719 lines
+TypeScript   --> 0 lines
+JSX          --> 0 lines
+Vue.js       --> 0 lines
+PHP          --> 0 lines
+C#           --> 692 lines
+Other        --> 25,177 lines
+
+[ TOTAL LINES OF CODE: 26,588 ]
+```
  <!-- LANGUAGES BREAKDOWN END -->
 ---
 *"Code is like humor. When you have to explain it, it's bad." – Cory House*
