@@ -1,9 +1,8 @@
 name: Update Lines of Code in Readme
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * 0" # Runs weekly on Sunday at midnight (UTC)
   workflow_dispatch: # Allows manual trigger
 
 jobs:
@@ -26,7 +25,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          USERNAME="GuyBernstein"
+          USERNAME="arhamkhnz"
 
           # Get a list of public repositories that are not forks
           REPOS=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user/repos?per_page=100" | jq -r '.[] | select(.fork == false) | .full_name') || echo "Error fetching repositories"
@@ -48,7 +47,7 @@ jobs:
           # Run cloc to analyze lines of code, excluding non-source code files
           echo "Calculating lines of code..."
           mkdir -p ../output
-          cloc . --exclude-ext=json,html,css,svg,md,py,ps1,scss --json > ../output/cloc-output.json
+          cloc . --exclude-ext=json,html,css,svg,md,ps1,scss --json > ../output/cloc-output.json
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
       - name: Commit and Push Output
@@ -60,13 +59,13 @@ jobs:
 
           # Format and update README
           TOTAL_LINES=$(jq '.SUM.code // 0' output/cloc-output.json)
+          JAVA_LINES=$(jq '.Java.code // 0' output/cloc-output.json)
+          PYTHON_LINES=$(jq '.Python.code // 0' output/cloc-output.json)
           JS_LINES=$(jq '.JavaScript.code // 0' output/cloc-output.json)
-          TS_LINES=$(jq '.TypeScript.code // 0' output/cloc-output.json)
-          JSX_LINES=$(jq '.JSX.code // 0' output/cloc-output.json)
           CSHARP_LINES=$(jq '."C#".code // 0' output/cloc-output.json)
-          VUE_LINES=$(jq '."Vuejs Component".code // 0' output/cloc-output.json)
-          PHP_LINES=$(jq '.PHP.code // 0' output/cloc-output.json)
-          OTHER_LINES=$((TOTAL_LINES - JS_LINES - TS_LINES - JSX_LINES - PHP_LINES - CSHARP_LINES - VUE_LINES))
+          C_LINES=$(jq '.C.code // 0' output/cloc-output.json)
+          CPP_LINES=$(jq '."C++".code // 0' output/cloc-output.json)
+          OTHER_LINES=$((TOTAL_LINES - JAVA_LINES - PYTHON_LINES - JS_LINES - CSHARP_LINES - C_LINES - CPP_LINES))
 
           # Function to format numbers with commas (ensuring proper locale settings)
           format_number() {
@@ -75,23 +74,23 @@ jobs:
           }
 
           FORMATTED_TOTAL=$(format_number $TOTAL_LINES)
+          FORMATTED_JAVA=$(format_number $JAVA_LINES)
+          FORMATTED_PYTHON=$(format_number $PYTHON_LINES)
           FORMATTED_JS=$(format_number $JS_LINES)
-          FORMATTED_TS=$(format_number $TS_LINES)
-          FORMATTED_JSX=$(format_number $JSX_LINES)
           FORMATTED_CSHARP=$(format_number $CSHARP_LINES)
-          FORMATTED_VUE=$(format_number $VUE_LINES)
-          FORMATTED_PHP=$(format_number $PHP_LINES)
+          FORMATTED_C=$(format_number $C_LINES)
+          FORMATTED_CPP=$(format_number $CPP_LINES)
           FORMATTED_OTHER=$(format_number $OTHER_LINES)
 
           CODE_BLOCK="\`\`\`
           [ LANGUAGES BREAKDOWN ]
 
+          Java         --> $FORMATTED_JAVA lines
+          Python       --> $FORMATTED_PYTHON lines
           JavaScript   --> $FORMATTED_JS lines
-          TypeScript   --> $FORMATTED_TS lines
-          JSX          --> $FORMATTED_JSX lines
-          Vue.js       --> $FORMATTED_VUE lines
-          PHP          --> $FORMATTED_PHP lines
           C#           --> $FORMATTED_CSHARP lines
+          C            --> $FORMATTED_C lines
+          C++          --> $FORMATTED_CPP lines
           Other        --> $FORMATTED_OTHER lines
 
           [ TOTAL LINES OF CODE: $FORMATTED_TOTAL ]
