@@ -75,16 +75,16 @@ High-performance web crawler using DFS algorithm with distributed task processin
 [ LANGUAGES BREAKDOWN ]
 
 Java         --> 13,953 lines
-Python       --> 12,553 lines
-HTML         --> 26,688 lines
+Python       --> 12,533 lines
+HTML         --> 27,029 lines
 CSS          --> 311 lines
 JavaScript   --> 719 lines
 C#           --> 692 lines
 C            --> 1,507 lines
 C++          --> 3,794 lines
-Other        --> 5,929 lines
+Other        --> 5,928 lines
 
-[ TOTAL LINES OF CODE: 66,146 ]
+[ TOTAL LINES OF CODE: 66,466 ]
 ```
  <!-- LANGUAGES BREAKDOWN END -->
 ---
